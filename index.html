@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Sœur Marguerite-Marie, Marie-Madeleine Ricard (1893–1985)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --page-bg:#faf6ee;
+    --ink:#2a2420;
+    --ink-soft:#5b5148;
+    --rule:#b9a98c;
+    --accent:#7a2e2e;
+    --margin-note:#7d7261;
+    --paper-shadow:0 0 0 1px rgba(0,0,0,.03), 0 25px 50px -20px rgba(60,45,20,.25);
+  }
+  *{box-sizing:border-box;}
+  html{background:#e7ded0;}
+  body{
+    margin:0;
+    padding:56px 0 120px;
+    font-family:"EB Garamond", "Palatino Linotype", Palatino, Georgia, serif;
+    color:var(--ink);
+    background:#e7ded0;
+    font-size:21px;
+    line-height:1.62;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    background:var(--page-bg);
+    box-shadow:var(--paper-shadow);
+    padding:88px 96px 100px;
+    position:relative;
+  }
+  .page::before{
+    content:"";
+    position:absolute;
+    inset:34px;
+    border:1px solid rgba(122,46,46,.18);
+    pointer-events:none;
+  }
+  
+
+  /* ---------- Front matter ---------- */
+  .kicker{
+    text-align:center;
+    text-transform:uppercase;
+    letter-spacing:.28em;
+    font-size:12.5px;
+    color:var(--margin-note);
+    margin-bottom:26px;
+  }
+  h1.title{
+    font-family:"Cormorant Garamond", "EB Garamond", serif;
+    text-align:center;
+    font-weight:600;
+    font-size:2.35rem;
+    line-height:1.18;
+    margin:0 0 6px;
+    letter-spacing:.01em;
+  }
+  .title small{
+    display:block;
+    font-family:"EB Garamond", serif;
+    font-weight:400;
+    font-style:italic;
+    color:var(--ink-soft);
+    margin-top:10px;
+  }
+  .title small .subname{
+    font-size:1.55rem;
+  }
+  .title small .submonial{
+    font-size:1.02rem;
+  }
+  .dates{
+    text-align:center;
+    font-variant:small-caps;
+    letter-spacing:.06em;
+    color:var(--accent);
+    font-size:1.05rem;
+    margin:18px 0 8px;
+  }
+  .ornament{
+    text-align:center;
+    color:var(--rule);
+    font-size:1.4rem;
+    letter-spacing:.6em;
+    margin:28px 0 6px;
+  }
+  .subtitle-block{
+    text-align:center;
+    font-style:italic;
+    color:var(--ink-soft);
+    max-width:520px;
+    margin:8px auto 0;
+    font-size:1rem;
+  }
+  .frontispiece{
+    text-align:center;
+    margin:44px auto 0;
+  }
+  .frontispiece img{
+    max-width:280px;
+    width:60%;
+    border:1px solid rgba(0,0,0,.15);
+    padding:10px;
+    background:#fff;
+    box-shadow:0 18px 40px -18px rgba(30,20,10,.5);
+  }
+  .frontispiece figcaption{
+    margin-top:14px;
+    font-variant:small-caps;
+    letter-spacing:.08em;
+    font-style:normal;
+    color:var(--margin-note);
+    font-size:.86rem;
+  }
+  hr.rule{
+    border:none;
+    border-top:1px solid var(--rule);
+    margin:44px 0;
+  }
+  hr.rule.thin{margin:34px 0;border-top:.6px solid var(--rule);}
+
+  /* ---------- ToC ---------- */
+  .toc{
+    margin:40px auto 0;
+    max-width:480px;
+  }
+  .toc-title{
+    text-align:center;
+    font-variant:small-caps;
+    letter-spacing:.14em;
+    color:var(--ink-soft);
+    font-size:.92rem;
+    margin-bottom:14px;
+  }
+  .toc ol{
+    list-style:none;
+    counter-reset:tocitem;
+    padding:0;
+    margin:0;
+  }
+  .toc li{
+    counter-increment:tocitem;
+    display:flex;
+    align-items:baseline;
+    gap:8px;
+    padding:5px 0;
+    font-size:.98rem;
+  }
+  .toc li::before{
+    content:"I" counter(tocitem, upper-roman) " —";
+    content: counter(tocitem, upper-roman) ".";
+    color:var(--accent);
+    min-width:26px;
+  }
+  .toc li a{
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:1px dotted transparent;
+  }
+  .toc li .fill{
+    flex:1;
+    border-bottom:1px dotted var(--rule);
+    margin:0 4px;
+    transform:translateY(-4px);
+  }
+  .toc li .pg{color:var(--margin-note); font-size:.88rem;}
+
+  /* ---------- Sections ---------- */
+  section{margin-top:64px;}
+  section:first-of-type{margin-top:56px;}
+  h2{
+    font-family:"Cormorant Garamond", serif;
+    font-weight:600;
+    font-size:1.55rem;
+    letter-spacing:.02em;
+    color:var(--accent);
+    margin:0 0 4px;
+  }
+  h2 .num{
+    font-variant:small-caps;
+    color:var(--margin-note);
+    font-size:1rem;
+    display:block;
+    letter-spacing:.22em;
+    margin-bottom:4px;
+  }
+  h3{
+    font-family:"EB Garamond", serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:1.08rem;
+    color:var(--ink-soft);
+    margin:26px 0 6px;
+  }
+  p{
+    margin:0 0 15px;
+    text-align:justify;
+    hyphens:auto;
+  }
+  section > p:first-of-type::first-letter{
+    font-family:"Cormorant Garamond", serif;
+    font-size:3.5rem;
+    font-weight:600;
+    float:left;
+    line-height:.82;
+    padding-right:10px;
+    padding-top:6px;
+    color:var(--accent);
+  }
+  .lead{
+    font-style:italic;
+    color:var(--ink-soft);
+  }
+  em.name{font-style:italic;}
+  .small-caps{font-variant:small-caps;}
+
+  sup.note{
+    color:var(--accent);
+    font-size:.72em;
+    cursor:default;
+  }
+  sup.note a{color:inherit; text-decoration:none;}
+
+  blockquote{
+    margin:20px 8px 22px 0;
+    padding:2px 0 2px 22px;
+    border-left:2px solid var(--rule);
+    font-style:italic;
+    color:var(--ink-soft);
+    font-size:.97rem;
+  }
+  blockquote cite{
+    display:block;
+    margin-top:6px;
+    font-style:normal;
+    font-variant:small-caps;
+    color:var(--margin-note);
+    font-size:.85rem;
+  }
+
+  /* ---------- Figures ---------- */
+  figure{
+    margin:30px 0;
+    text-align:center;
+  }
+  figure img{
+    max-width:100%;
+    border:1px solid rgba(0,0,0,.12);
+    box-shadow:0 10px 26px -14px rgba(30,20,10,.45);
+    background:#fff;
+  }
+  figure.two-up{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+  figure.two-up > div{flex:1 1 260px; max-width:340px;}
+  figcaption{
+    margin-top:10px;
+    font-size:.85rem;
+    font-style:italic;
+    color:var(--margin-note);
+    text-align:justify;
+  }
+
+  /* ---------- Timeline ---------- */
+  .timeline{
+    margin:34px 0;
+    border-top:.6px solid var(--rule);
+    border-bottom:.6px solid var(--rule);
+    padding:22px 0;
+  }
+  .timeline .row{
+    display:grid;
+    grid-template-columns:88px 1fr;
+    gap:18px;
+    padding:9px 0;
+  }
+  .timeline .row + .row{border-top:.6px dotted rgba(122,46,46,.18);}
+  .timeline .yr{
+    font-variant:small-caps;
+    color:var(--accent);
+    text-align:right;
+    font-size:.98rem;
+    padding-top:1px;
+  }
+  .timeline .ev{font-size:.98rem;}
+  .timeline .ev b{font-weight:600;}
+
+  /* ---------- Info box ---------- */
+  .aside{
+    background:rgba(122,46,46,.05);
+    border:1px solid rgba(122,46,46,.15);
+    padding:18px 22px;
+    margin:26px 0;
+    font-size:.94rem;
+    color:var(--ink-soft);
+  }
+  .aside h4{
+    margin:0 0 8px;
+    font-variant:small-caps;
+    letter-spacing:.08em;
+    color:var(--accent);
+    font-weight:600;
+    font-size:.92rem;
+  }
+  .aside p{margin-bottom:8px;}
+  .aside p:last-child{margin-bottom:0;}
+
+  /* ---------- Footer / notes ---------- */
+  .colophon{
+    margin-top:70px;
+    padding-top:22px;
+    border-top:1px solid var(--rule);
+    text-align:center;
+    color:var(--margin-note);
+    font-size:.82rem;
+    font-style:italic;
+  }
+  .notes{
+    margin-top:60px;
+    font-size:.86rem;
+    color:var(--ink-soft);
+  }
+  .notes h2{font-size:1.15rem;}
+  .notes ol{padding-left:20px;}
+  .notes li{margin-bottom:10px; text-align:justify;}
+  .notes a{color:var(--accent);}
+
+  .sources-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+  }
+  .sources-list li{
+    display:grid;
+    grid-template-columns:26px 1fr;
+    gap:10px;
+    margin-bottom:14px;
+    font-size:.95rem;
+  }
+  .sources-list li .tag{
+    color:var(--accent);
+    font-family:"Cormorant Garamond", serif;
+    font-weight:700;
+  }
+  @media (max-width:900px){
+    .page{padding:60px 48px 80px;}
+    .page::before{inset:20px;}
+  }
+  @media (max-width:700px){
+    .page{padding:44px 28px 60px;}
+    .page::before{inset:12px;}
+    body{font-size:19px;}
+    h1.title{font-size:1.95rem;}
+    .title small .subname{font-size:1.3rem;}
+    .title small .submonial{font-size:.95rem;}
+    figure.two-up{flex-direction:column; align-items:center;}
+    figure.two-up > div{max-width:100%;}
+    .timeline .row{grid-template-columns:72px 1fr; gap:12px;}
+    blockquote{padding-left:14px;}
+    .aside{padding:14px 16px;}
+  }
+  @media (max-width:420px){
+    body{font-size:17.5px;}
+    .page{padding:32px 18px 50px;}
+    .page::before{inset:8px;}
+    h1.title{font-size:1.7rem;}
+    .title small .subname{font-size:1.15rem;}
+    .kicker{letter-spacing:.16em;}
+    .timeline .row{grid-template-columns:60px 1fr; gap:8px;}
+  }
+  @media print{
+    html,body{background:#fff;}
+    .page{box-shadow:none; padding:0;}
+    .page::before{display:none;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <p class="kicker">Notice biographique &amp; familiale</p>
+  <h1 class="title">Sœur Marguerite-Marie
+    <small><span class="subname">née Marie-Madeleine Ricard</span>, <br> <span class="submonial">moniale bénédictine de l'abbaye Notre-Dame de Jouarre</span></small>
+  </h1>
+  <p class="dates">9 juin 1893 — 1<sup>er</sup> décembre 1985</p>
+  <div class="ornament">✦ ✦ ✦</div>
+  <p class="subtitle-block">Du Sillon de Marc Sangnier et de la Mouffe de la rue Mouffetard à Paris, à la clôture de l'abbaye de Jouarre : itinéraire d'une vie donnée.</p>
+
+  <figure class="frontispiece">
+    <img src="assets/portrait-20ans.jpg" alt="Portrait de Marie-Madeleine Ricard, vers l'âge de vingt ans">
+    <figcaption>Marie-Madeleine Ricard, vers vingt ans</figcaption>
+  </figure>
+
+  <div class="toc">
+    <p class="toc-title">Sommaire</p>
+    <ol>
+      <li><a href="#sillon">Une jeunesse dans la mouvance du Sillon</a><span class="fill"></span><span class="pg">§1</span></li>
+      <li><a href="#mouffe">« Chez nous » : la Maison pour tous de la Mouffe</a><span class="fill"></span><span class="pg">§2</span></li>
+      <li><a href="#jouarre">L'entrée en religion : l'abbaye Notre-Dame de Jouarre</a><span class="fill"></span><span class="pg">§3</span></li>
+      <li><a href="#office">Cellérière et prieure</a><span class="fill"></span><span class="pg">§4</span></li>
+      <li><a href="#derniers">Les dernières années et la mort</a><span class="fill"></span><span class="pg">§5</span></li>
+      <li><a href="#ecriture">Le témoignage de l'écriture</a><span class="fill"></span><span class="pg">§6</span></li>
+      <li><a href="#sources">Sources et documents</a><span class="fill"></span><span class="pg">§7</span></li>
+    </ol>
+  </div>
+
+  <hr class="rule">
+
+  <section id="sillon">
+    <h2><span class="num">Première partie</span>Une jeunesse dans la mouvance du Sillon</h2>
+    <p>Marie-Madeleine Ricard naît le 9 juin 1893. Ce nom est celui que consignent les archives du <em class="name">Sillon</em>, ce mouvement de démocratie chrétienne fondé en 1894 par <em class="name">Marc Sangnier</em> (1873–1950), alors qu'elle a un an à peine.<sup class="note"><a href="#n1">1</a></sup> Le Sillon voulait concilier catholicisme et idéal républicain, offrir aux ouvriers et aux étudiants un lieu de rencontre et d'éducation populaire, et fut, en son temps, l'un des plus vastes foyers de laïcs catholiques engagés dans la question sociale.<sup class="note"><a href="#n2">2</a></sup> Sangnier lui-même, ancien élève de Polytechnique, y voyait moins une œuvre confessionnelle qu'un mouvement « profondément religieux » sans être inféodé à la hiérarchie — position qui, en 1910, lui vaudra la condamnation, par la lettre pontificale <em>Notre charge apostolique</em>, et la dissolution du mouvement.<sup class="note"><a href="#n3">3</a></sup></p>
+
+    <figure class="two-up">
+      <div>
+        <img src="assets/enfance-seule.jpg" alt="Marie-Madeleine Ricard enfant, vers deux ans">
+        <figcaption>La benjamine de la famille à deux ou trois ans, dans sa robe blanche à grand col froncé et manches bouffantes, chaussures vernies et nœud dans les cheveux — la même tenue d'apparat que sur la photo de groupe.</figcaption>
+      </div>
+      <div>
+        <img src="assets/enfance-freres.jpg" alt="Marie-Madeleine Ricard enfant avec ses frères">
+        <figcaption>Avec ses frères, au même âge : Saint-Valery-sur-Somme, vers 1895. Les trois garçons en costume trois-pièces de drap sombre — gilet boutonné, col blanc, chaîne de montre traversant le gilet, visiblement taillés et non confectionnés en série, culotte courte et bas montants pour le cadet — encadrent leur petite sœur en robe blanche à col Claudine et manches bouffantes, nœud dans les cheveux bouclés. L'ensemble des tenues, manifestement d'apparat, témoigne d'une famille de petite bourgeoisie provinciale aisée, soucieuse de sa tenue et de sa représentation.</figcaption>
+      </div>
+    </figure>
+
+    <p>C'est dans les cercles nés de cette effervescence, et plus précisément dans son prolongement parisien de la rue Mouffetard, que le nom de Marie-Madeleine Ricard resurgit, longtemps après, dans la mémoire d'un ancien du mouvement. Interrogé sur les femmes formées à « la pensée éducative et sociale de Marc Sangnier », le témoin en cite plusieurs qui « vraiment se sentaient du Sillon » — parmi elles, Marie-Madeleine Ricard — avant d'ajouter, sobrement, qu'elle « est entrée en religion ».<sup class="note"><a href="#n4">4</a></sup></p>
+
+    <figure>
+      <img src="assets/temoignage-sangnier.jpg" alt="Extrait d'un recueil de témoignages sur Marc Sangnier mentionnant Marie-Madeleine Ricard">
+      <figcaption>Extrait d'un recueil de témoignages sur Marc Sangnier et le Sillon : Marie-Madeleine Ricard y est nommée parmi les figures féminines formées par le mouvement, avec la simple mention « est entrée en religion ».</figcaption>
+    </figure>
+  </section>
+
+  <section id="mouffe">
+    <h2><span class="num">Deuxième partie</span>« Chez nous » : la Maison pour tous de la Mouffe</h2>
+    <p>Le terreau de cet engagement porte un nom familier à qui s'intéresse à l'éducation populaire parisienne : <em class="name">la Mouffe</em>, du nom de la rue Mouffetard, dans le cinquième arrondissement. Tout commence en 1906, lorsqu'une jeune étudiante « sillonniste », Cathe Descroix, s'installe au 6 de la rue avec deux amies et fonde un petit groupe baptisé <em>« Chez nous »</em>, dans un quartier où les conditions de vie sont alors particulièrement difficiles. Rattaché au Sillon, le groupe organise colonies de vacances, conférences, une bibliothèque, des sorties appelées « caravanes », puis, en 1920, installe son foyer au 76, rue Mouffetard — un local qui avait accueilli, avant la Première Guerre, une Maison des syndicats et une Université populaire où étaient venus parler Jean Jaurès et Léon Bloy, où Lénine lui-même aurait pris la parole.<sup class="note"><a href="#n5">5</a></sup></p>
+
+    <figure>
+      <img src="assets/famille-parents-20ans.jpg" alt="Marie-Madeleine Ricard avec ses parents, vers vingt ans">
+      <figcaption>Avec ses parents, vers vingt ans, à Saint-Valery-sur-Somme, où ils exercent le métier d'imprimeur.</figcaption>
+    </figure>
+
+    <p>C'est dans cette maison, après avoir été fiancée, avant la guerre, à un jeune homme mort au front<sup class="note"><a href="#n6">6</a></sup>, que Marie-Madeleine Ricard trouve sa place. En 1920, huit volontaires à temps plein et une trentaine d'amis à temps partiel font vivre « Chez nous » : Marguerite Walther s'occupe du cinéma et des mouvements féminins, André Lefèvre dessine en béton armé, Marthe Levasseur est couturière en chambre, Henriette Devillers tient le secrétariat — et <b>Marie-Madeleine Ricard est chargée du restaurant</b>, aux côtés de Renée Sainte Claire Deville, trésorière, et de Marie Raimbault, qui gère le bar.<sup class="note"><a href="#n7">7</a></sup> L'année précédente, en 1919, elle fonde elle-même <b>l'œuvre des enfants de la rue Mouffetard</b> — initiative qui prolonge, à l'échelle des plus jeunes du quartier, l'esprit d'entraide et d'éducation populaire de la maison.<sup class="note"><a href="#n8">8</a></sup></p>
+
+    <div class="aside">
+      <h4>Une maison, deux chemins</h4>
+      <p>L'histoire de « Chez nous » n'est pas linéaire. Fin 1921, Cathe Descroix, restée à l'écart pendant la guerre, revient et reproche à la maison de s'être écartée du « souci constant de se conduire en parfaits chrétiens et en parfaits démocrates ». André Lefèvre, Marguerite Walther et une partie de l'équipe, pour leur part, s'orientent vers une neutralité religieuse plus stricte : « Si nous voulons être neutres, il faut supprimer [la prière et le Christ dans les activités] », écrit l'abbé Viollet, aumônier du groupe, dès 1919. La rupture est consommée au début de 1923 : une nouvelle association, la « Maison pour tous », se déclare à la Préfecture de la Seine, sur un principe de neutralité et d'ouverture à tous, sans distinction d'âge ni de race.<sup class="note"><a href="#n13">13</a></sup></p>
+      <p>Ce basculement — d'un mouvement encore marqué par l'engagement confessionnel du Sillon vers une « laïcité ouverte » — offre un contraste éclairant avec le chemin que prendra Marie-Madeleine Ricard : lorsqu'une partie de ses compagnons de la Mouffe s'oriente vers l'institution laïque et sociale (ancêtre, par la suite, des Maisons des Jeunes et de la Culture), elle rejoint, quelques années plus tard, la vie monastique. Le lien entre les deux trajectoires est chronologique ; les raisons de son choix, elles, restent du domaine de l'intime.</p>
+    </div>
+
+  </section>
+
+  <section id="jouarre">
+    <h2><span class="num">Troisième partie</span>L'entrée en religion : l'abbaye Notre-Dame de Jouarre</h2>
+    <p>En 1926, Marie-Madeleine Ricard quitte la Mouffe et entre à l'abbaye Notre-Dame de Jouarre, en Seine-et-Marne — l'un des plus anciens monastères de France, fondé vers 630 par saint Ado (Adon), fils de saint Authaire, à l'instigation de saint Colomban. L'abbaye fut d'abord un monastère double, avant que sa branche féminine, placée sous l'autorité de la première abbesse, sainte Théodechilde, ne devienne seule pérenne ; au IX<sup>e</sup> siècle, sous l'impulsion de la réforme carolingienne, la communauté adopte la règle de saint Benoît.<sup class="note"><a href="#n9">9</a></sup> Ruinée pendant la guerre de Cent Ans, dispersée puis vendue comme bien national à la Révolution, l'abbaye fut rachetée et repeuplée par des moniales bénédictines qui l'occupent sans discontinuer depuis lors.<sup class="note"><a href="#n10">10</a></sup></p>
+
+    <p>Entrer à Jouarre en 1926, c'est entrer dans une communauté de <em>vie entièrement contemplative</em>, au sens que lui donnait alors le droit canonique de 1917 : une existence cloîtrée, rythmée par l'office divin et le travail, selon la maxime bénédictine <em>ora et labora</em>, et soumise à la <b>clôture papale</b> — cette discipline qui interdit, sauf exception, toute sortie du monastère et toute entrée de personnes étrangères dans l'enceinte réservée aux moniales.<sup class="note"><a href="#n11">11</a></sup> C'est cette forme de vie, retirée du monde et pourtant tournée vers lui par la prière, que Marie-Madeleine Ricard choisit à trente-trois ans, après une décennie d'engagement actif au service des plus pauvres du quartier Mouffetard. Elle y prend le nom de <b>sœur Marguerite-Marie</b> et prononce ses vœux le 24 mai 1928.<sup class="note"><a href="#n8">8</a></sup></p>
+
+    <figure>
+      <img src="assets/religieuse-jeune.jpg" alt="Sœur Marguerite-Marie, jeune religieuse, dans le cloître de l'abbaye de Jouarre">
+      <figcaption>Sœur Marguerite-Marie, jeune religieuse.</figcaption>
+    </figure>
+  </section>
+
+  <section id="office">
+    <h2><span class="num">Quatrième partie</span>Cellérière et prieure</h2>
+    <p>Plus d'un demi-siècle de vie monastique à Jouarre fut placé sous le signe du service : celui de cellérière d'abord, celui de prieure ensuite. Ces deux charges, l'une pratique et l'autre spirituelle, sont définies par saint Benoît lui-même dans sa Règle — elles appartiennent au cœur le plus ancien de la tradition monastique bénédictine.</p>
+
+    <h3>La cellérière</h3>
+    <p>La règle de saint Benoît consacre tout un chapitre (le chapitre XXXI) à cet office : le cellérier — ou, au féminin, la cellérière — a la charge des biens matériels du monastère : provisions, cave, ferme, outils, distribution de la nourriture et des vêtements aux sœurs, accueil des pauvres et des hôtes qui se présentent à la porte. Benoît demande qu'elle soit choisie pour sa sagesse, sa maturité et sa sobriété, « comme un père pour toute la communauté », attentive à ne rien gaspiller et à ne laisser personne dans le besoin. C'est un office de confiance, exercé au cœur du temporel, qui suppose autorité douce et sens pratique — qualités dont on pourrait être tenté de voir une préfiguration chez la jeune femme qui, vingt ans plus tôt, tenait le restaurant de la Mouffe — sans que le lien soit autre chose qu'une hypothèse rétrospective.</p>
+
+    <h3>La prieure</h3>
+    <p>La prieure, elle, est la première collaboratrice de la mère abbesse — celle qui la supplée en son absence, veille à l'observance régulière et à la discipline commune, et peut, dans certains monastères, avoir la charge d'une communauté dépendante ou d'une maison secondaire. Cumuler les deux charges, comme le fait sœur Marguerite-Marie, signale une confiance particulière de la communauté : c'est reconnaître à la fois un sens aigu de l'administration et une autorité spirituelle suffisante pour accompagner les sœurs dans l'observance de la Règle.</p>
+
+    <blockquote>
+      « Sa vie fut toute consacrée aux autres. […] Entrée à l'abbaye en 1926, elle y montra un humble et infatigable dévouement au service de tous comme cellérière et prieure. »
+      <cite>Avis de décès, communauté de l'abbaye Notre-Dame de Jouarre, décembre 1985</cite>
+    </blockquote>
+  </section>
+
+  <section id="derniers">
+    <h2><span class="num">Cinquième partie</span>Les dernières années et la mort</h2>
+    <p>La vieillesse de sœur Marguerite-Marie fut marquée par une double épreuve : paralysée à partir de 1970, elle perd la vue en 1974. L'avis de décès insiste sur ce qui, dans cette double infirmité, n'a rien retranché à son rayonnement : « elle n'a cessé de rayonner autour d'elle sa foi et son action de grâce ». Elle meurt à l'abbaye le 1<sup>er</sup> décembre 1985, précisément le premier dimanche de l'Avent — temps liturgique d'attente et d'espérance dont le texte même de l'annonce, tiré du prophète Isaïe, se fait l'écho : « Lève les yeux, Jérusalem, et vois. Voici ton Sauveur qui vient te libérer de tes liens » (Is. 60). Ses funérailles sont célébrées à l'abbaye le mardi 3 décembre 1985, à quinze heures, par la mère abbesse, sa communauté et sa famille.</p>
+    <p>Entre la rue Mouffetard de ses vingt ans et la clôture de Jouarre de ses dernières années, c'est bien la même ligne de conduite qui se dessine : celle d'une femme qui, du restaurant populaire de « Chez nous » à l'office de cellérière d'une abbaye millénaire, aura fait du service des autres — qu'ils soient enfants pauvres d'un quartier de Paris ou sœurs d'une communauté monastique — la forme constante de sa vie.</p>
+
+    <figure>
+      <img src="assets/avis-deces.jpg" alt="Avis de décès de Marguerite-Marie, Madeleine Ricard, abbaye Notre-Dame de Jouarre, décembre 1985">
+      <figcaption>Avis de décès de notre sœur Marguerite-Marie, Madeleine Ricard, diffusé par l'abbaye Notre-Dame de Jouarre en décembre 1985.</figcaption>
+    </figure>
+
+    <div class="timeline">
+      <div class="row"><div class="yr">1893</div><div class="ev">Naissance de Marie-Madeleine Ricard, le 9 juin.</div></div>
+      <div class="row"><div class="yr">v. 1910–1920</div><div class="ev">Formation dans la mouvance du <b>Sillon</b> de Marc Sangnier ; engagement à « Chez nous », rue Mouffetard.</div></div>
+      <div class="row"><div class="yr">1919</div><div class="ev">Fonde l'<b>œuvre des enfants</b> de la rue Mouffetard.</div></div>
+      <div class="row"><div class="yr">1920</div><div class="ev">Responsable du <b>restaurant</b> de la Maison « Chez nous ».</div></div>
+      <div class="row"><div class="yr">1926</div><div class="ev">Entre à l'<b>abbaye Notre-Dame de Jouarre</b>.</div></div>
+      <div class="row"><div class="yr">1928</div><div class="ev">Profession religieuse, le 24 mai — sœur <b>Marguerite-Marie</b>.</div></div>
+      <div class="row"><div class="yr">1970</div><div class="ev">Paralysie.</div></div>
+      <div class="row"><div class="yr">1974</div><div class="ev">Perte de la vue.</div></div>
+      <div class="row"><div class="yr">1985</div><div class="ev">Meurt à l'abbaye le 1<sup>er</sup> décembre, 1<sup>er</sup> dimanche de l'Avent ; funérailles le 3 décembre.</div></div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section id="ecriture">
+    <h2><span class="num">Sixième partie</span>Le témoignage de l'écriture</h2>
+    <p>À la biographie établie par les actes et les témoignages, on peut adjoindre une source plus intime : la main même de sœur Marguerite-Marie. Cette partie rassemble plusieurs échantillons de son écriture à différents âges de sa vie, avec une courte lecture graphologique pour chacun. Ces lectures s'attachent d'abord à ce qui est directement observable — calibre, inclinaison, marges, pression, régularité, organisation de l'espace — avant de proposer parfois une interprétation de ces traits. Cette interprétation est présentée pour ce qu'elle est : une lecture subjective, non un diagnostic. La graphologie n'est pas une méthode scientifiquement validée pour déduire la personnalité à partir de l'écriture ; ces remarques valent comme on dirait d'un portrait qu'il donne une certaine impression, sans prétendre en épuiser le modèle.</p>
+
+    <h3>1. Vers 1932 — lettre à Pierre, pour sa communion solennelle</h3>
+    <p>Ce feuillet, écrit sur un papier très fin (le recto se voit par transparence au verso), est adressé à son neveu et filleul, Pierre, à l'occasion de sa communion solennelle. Sœur Marguerite-Marie a alors une quarantaine d'années, et environ quatre ans de profession religieuse depuis ses vœux de 1928. Le ton, tout de tendresse spirituelle, est celui d'une marraine ou d'une tante attentive à la vie intérieure de l'enfant.</p>
+
+    <figure>
+      <img src="assets/lettre-pierre-1932.jpg" alt="Lettre manuscrite de sœur Marguerite-Marie à Pierre, vers 1932, pour sa communion solennelle">
+      <figcaption>1. Lettre à Pierre, pour sa communion solennelle, vers 1932.</figcaption>
+    </figure>
+
+    <div class="aside">
+      <h4>Lecture graphologique n° 1 — vers 1932</h4>
+      <p>L'écriture est cursive, de calibre régulier, posée et constamment inclinée à droite de façon modérée. Elle progresse par petits groupes de lettres — liées en guirlandes légères à l'intérieur de chaque groupe — avec des levers de plume fréquents et délibérés entre eux. Ce rythme groupé, ni très lié ni franchement juxtaposé, évoque une pensée qui avance par séquences : analytique sans être saccadée.</p>
+      <p>Les marges révèlent une tension caractéristique : légère marge à gauche, absence totale à droite, parfois quelques mots tassés en fin de ligne — le besoin de tout dire l'emporte sur le souci de l'espace, mais sans jamais déborder sur les lignes voisines, qui restent parfaitement distinctes.</p>
+      <p>Les zones sont inégalement investies : les jambages sont prolongés, les hampes longues mais simples, sans boucle ni ornement. La zone médiane reste maîtresse. Les majuscules, courtes et directes, refusent tout apparat. Les barres de t, lancées et s'affinant vers la droite, suggèrent une volonté active, voire un certain élan dans l'action.</p>
+      <p>Les formes fermées (a, o bien clos) côtoient des formes ouvertes (n, m en guirlande, e et s étroits mais non crispés) : fermeté discrète sur ce qui tient au fond, ouverture réelle dans la relation. Les finales courtes et les initiales directes confirment une économie du geste : ni effacement ni démonstration.</p>
+      <p>L'ensemble donne l'image d'une personnalité structurée et constante, à l'affectivité réelle mais contenue, capable d'engagement durable sans ostentation — cohérente, en somme, avec ce que la lettre dit d'elle-même.</p>
+    </div>
+
+    <h3>2. Vers 1960 — carnet de lecture, « Laissez-vous saisir par le Christ » (Père Peyriguère)</h3>
+    <p>Ce carnet n'est ni un journal intime ni un relevé de lecture isolé : c'est un cahier de notes spirituelles, tenu au fil de plusieurs sources. Le nom du Père Peyriguère<sup class="note"><a href="#n12">12</a></sup>, cité en ouverture, y voisine avec des renvois à d'autres maîtres spirituels — l'Imitation de Jésus-Christ, saint François de Sales, le carme Paul-Marie de la Croix — et des numéros de référence qui trahissent une compilation progressive plutôt qu'une lecture unique. L'écriture, faite de phrases nominales, d'abréviations et de formulations condensées, organise cette matière par grands thèmes : la prière, la Messe et le sacrifice, l'abandon, l'action de l'Esprit Saint, le renoncement, la vie contemplative, le moment présent. Mais sœur Marguerite-Marie ne recopie pas mécaniquement : elle s'approprie peu à peu cet enseignement, jusqu'à la résolution personnelle et à la prière directement adressée au Christ — « Est-ce qu'aujourd'hui j'ai fait ce que le Christ aurait fait ? », « Ô Bon Maître, faites que j'en arrive à souffrir avec joie... ». Ce carnet, écrit d'abord pour elle-même, sera plus tard offert à son filleul.</p>
+
+    <figure>
+      <img src="assets/carnet-peyriguere-1960.jpg" alt="Première page d'un carnet de notes de lecture de sœur Marguerite-Marie, vers 1960, sur la spiritualité du Père Peyriguère">
+      <figcaption>2. Première page d'un carnet de notes, vers 1960.</figcaption>
+    </figure>
+
+    <div class="aside">
+      <h4>Lecture graphologique n° 2 — vers 1960</h4>
+      <p class="lead" style="font-size:.86rem; margin-bottom:14px;">Cette analyse ne porte que sur les trois premiers feuillets du carnet.</p>
+      <p><b>Première feuille (fiche unique).</b> L'écriture est petite, serrée, sans marges, structurée en paragraphes avec retraits réguliers : ce n'est pas une mise en page pour autrui mais une organisation pour soi, une pensée qui se donne sa propre architecture intérieure. Les abréviations fréquentes (Ch pour Christ, ns pour nous, q pour que) confirment que l'outil graphique suit une pensée plus rapide qu'elle — on note, on ne rédige pas.</p>
+      <p>Le trait est épais (stylo-bille), les formes assez anguleuses, les finales courtes, les initiales directes : l'économie du geste observée trente ans plus tôt s'est accentuée, toute dépense inutile a disparu. Les barres de t lancées subsistent — l'élan volontaire est intact. L'absence totale de fioritures, chez quelqu'un qui écrit manifestement beaucoup et depuis longtemps, est éloquente : aucune complaisance envers soi-même.</p>
+      <p>La tenue de ligne est la variable la plus informative : majoritairement horizontale ou légèrement concave, elle marque une maîtrise réelle, mais avec des passages montants qui trahissent des moments d'élan ou d'intensité dans la réflexion — la ligne suit l'état intérieur plus qu'elle ne le gouverne.</p>
+      <p><b>Deuxième feuille (deux pages).</b> Le désordre relatif s'installe : irrégularités de calibre, lignes tantôt serrées tantôt plus aérées, mouvement général plus concave à montant. On n'est plus dans la même concentration. Soit ces pages ont été écrites dans un autre moment de la journée ou de la retraite, soit elles suivent chronologiquement la première et la fatigue ou l'intensité émotionnelle ont légèrement desserré le contrôle. Ce n'est pas une dégradation — c'est une écriture qui respire différemment.</p>
+      <p><b>Évolution sur trente ans.</b> Ce qui frappe, c'est moins le changement que la continuité dans l'épurement. La posture graphique d'ensemble — inclinaison modérée, finales courtes, initiales directes, absence d'ornement, maîtrise de la ligne — est reconnaissable d'un document à l'autre. Mais là où la lettre de jeunesse gardait encore une certaine ampleur (jambages prolongés, espaces intermots larges, calibre généreux), les notes de la maturité ont rétréci vers l'essentiel : moins de place, moins de geste, plus de densité. L'écriture de la jeunesse disait <em>je vais vers l'autre</em> ; celle de la maturité dit <em>j'ai trouvé où aller</em>. Ce que le contenu spirituel de ces notes exprime en mots, la graphie l'exprime en forme.</p>
+    </div>
+
+    <p>Aucune écriture ne se lit pourtant hors de ce qui l'a formée : chacune porte, indissolublement mêlées, la trace d'une éducation, d'un milieu et d'une époque, et celle d'une personne. On y retrouve ici les marques d'une formation scolaire typique de cette époque et de ce milieu bourgeois provincial : une écriture apprise dans un cadre discipliné, où la sobriété formelle était érigée en vertu et où tout ce qui aurait pu ressembler à une affirmation de soi par le geste était découragé.La régularité, l'économie, l'absence de fioriture relèvent donc autant d'un marqueur de génération et de milieu que d'une inclination personnelle. Ce qui est en tout cas observable au-delà du type, c'est l'organisation soignée des notes — retraits, structuration en paragraphes, abréviations systématiques — et la constance de cette posture graphique sur trente ans. Qu'il faille y voir un trait de personnalité ou simplement les effets d'une même formation et d'une même habitude d'écriture, c'est une question à laquelle les documents ne permettent pas de répondre.</p>
+
+    <h3>3. 1971 — lettre à Pierre et Marie, au lendemain du décès de son frère</h3>
+    <p>Une dizaine d'années séparent cette lettre de la précédente. Sœur Marguerite-Marie y écrit à Pierre et à son épouse Marie, au lendemain de la mort de son propre frère. Le document est daté de 1971. L'avis de décès situe sa paralysie à partir de 1970, mais l'écriture de cette lettre n'en porte aucune trace visible — la date exacte du début de l'infirmité reste incertaine.</p>
+
+    <figure>
+      <img src="assets/lettre-pierre-marie-1971.jpg" alt="Lettre manuscrite de sœur Marguerite-Marie à Pierre et Marie, 1971, au lendemain du décès de son frère">
+      <figcaption>3. Lettre à Pierre et Marie, 1971, au lendemain du décès du frère de sœur Marguerite-Marie.</figcaption>
+    </figure>
+
+    <div class="aside">
+      <h4>Lecture graphologique n° 3 — 1971</h4>
+      <p>En 1971, à 78 ans, l'écriture ne trahit aucune fatigue : les traits fondamentaux — petitesse, régularité, inclinaison constante, formes fermées sur les o et a, m ouverts, jambages longs, barres de t lancées, lettres groupées — sont intacts et immédiatement reconnaissables. Deux légères évolutions méritent attention : la marge gauche se réduit progressivement au fil de la page, comme si l'élan du début se tempérait en s'intériorisant, tandis que la marge droite, désormais tenue mais sans rigidité, marque une retenue nouvelle — l'urgence de tout occuper s'est apaisée. Ce qui ressort au fond, c'est moins l'absence de vieillissement que la remarquable cohérence d'une écriture qui, sur quarante ans, n'a jamais été une performance mais une manière d'être.</p>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section id="sources">
+    <h2><span class="num">Septième partie</span>Sources et documents</h2>
+    <p class="lead">Cette notice s'appuie sur quatre pièces d'archives familiales, complétées par des recherches sur le contexte historique du Sillon et de l'abbaye de Jouarre.</p>
+    <ul class="sources-list">
+      <li><span class="tag">A</span><div>Jean-Claude Delbreil (prés.), <em>Marc Sangnier, Témoignages</em>, où un ancien du Sillon évoque Marie-Madeleine Ricard parmi les figures féminines du mouvement « entrées en religion ».</div></li>
+      <li><span class="tag">B</span><div>Avis de décès de sœur Marguerite-Marie, Madeleine Ricard, diffusé par l'abbaye Notre-Dame de Jouarre (décembre 1985), donnant l'essentiel des repères biographiques : naissance, fondation de l'œuvre des enfants, entrée en religion, profession, charges monastiques, infirmités et mort.</div></li>
+      <li><span class="tag">C</span><div>C. Maurel, <em>60 ans des MJC</em> (thèse), p. 164–167, consacrées à l'histoire de la Maison pour tous de la Mouffe (rue Mouffetard) : les volontaires à temps plein de « Chez nous » en 1920, puis la rupture de 1921–1923 entre l'esprit sillonniste de Cathe Descroix et la « laïcité ouverte » de la future Maison pour tous.</div></li>
+      <li><span class="tag">D</span><div>Lettre autographe de sœur Marguerite-Marie à Pierre, vers 1932, à l'occasion de sa communion solennelle — premier échantillon d'une série d'écritures destinée à s'enrichir.</div></li>
+      <li><span class="tag">E</span><div>Première page d'un carnet de notes de lecture, vers 1960, — deuxième échantillon d'écriture. l'intégralité du carnet est retranscrite <a href="assets/laissez_vous_saisir_par_le_christ.html">ici</a></li>
+      <li><span class="tag">F</span><div>Lettre autographe de sœur Marguerite-Marie à Pierre et Marie, 1971, au lendemain du décès de son frère — troisième échantillon d'écriture.</div></li>
+    </ul>
+  </section>
+
+  <div class="notes">
+    <h2>Notes</h2>
+    <ol>
+      <li id="n1">Marc Sangnier fonde <em>Le Sillon</em> en 1894 ; le mouvement se développe jusqu'à sa condamnation en 1910. Voir « Marc Sangnier » et « Le Sillon », <em>Wikipédia</em>.</li>
+      <li id="n2">Le Sillon visait à concilier catholicisme et idéal démocratique face aux mouvements ouvriers anticléricaux, dans le sillage de l'encyclique <em>Rerum novarum</em> de Léon XIII (1891).</li>
+      <li id="n3">Sangnier soutenait que le Sillon était un mouvement « laïque » bien que « profondément religieux » ; cette position lui vaut le rappel à l'ordre puis la condamnation de Pie X dans <em>Notre charge apostolique</em> (25 août 1910), entraînant la dissolution du mouvement. Voir Encyclopædia Universalis, art. « Sangnier Marc ».</li>
+      <li id="n4">Document A (voir <a href="#sources">sources</a>) : Jean-Claude Delbreil (prés.), <em>Marc Sangnier, Témoignages</em>.</li>
+      <li id="n5">Sur la fondation de « Chez nous » par Cathe Descroix en 1906 et son installation au 76 rue Mouffetard en 1920 : C. Maurel, <em>60 ans des MJC</em> (thèse), p. 164–165.</li>
+      <li id="n6">Tradition orale familiale ; aucun document n'a pu, à ce jour, être retrouvé pour l'attester.</li>
+      <li id="n7">Répartition des volontaires de « Chez nous » en 1920 : C. Maurel, <em>60 ans des MJC</em> (thèse), p. 165.</li>
+      <li id="n8">Document B (avis de décès), sources familiales.</li>
+      <li id="n9">Fondation de l'abbaye de Jouarre vers 630 par saint Ado, sous l'influence de saint Colomban ; sainte Théodechilde, première abbesse ; adoption de la règle bénédictine au IX<sup>e</sup> siècle sous l'effet de la réforme carolingienne. Voir « Jouarre Abbey », <em>Wikipedia</em>, et Encyclopædia Universalis, art. « Jouarre, abbaye de ».</li>
+      <li id="n10">L'abbaye, vendue comme bien national à la Révolution, fut rachetée par les bénédictines qui l'occupent encore aujourd'hui ; la communauté compte, au XXI<sup>e</sup> siècle, une trentaine de moniales.</li>
+      <li id="n11">Le Code de droit canonique de 1917 distinguait, pour les instituts de vie contemplative, une clôture dite « papale », de discipline stricte, encadrant les sorties et les entrées dans le monastère ; cette discipline sera progressivement assouplie après le concile Vatican II.</li>
+      <li id="n12">Albert Peyriguère (1883–1959), ancien aumônier militaire, rejoint l'esprit de Charles de Foucauld et vit en ermite à El Kbab (Maroc) au service d'une population musulmane, jusqu'à sa mort en 1959. Voir « Albert Peyriguère », <em>Wikipédia</em>.</li>
+      <li id="n13">Sur la rupture de 1921–1923 entre l'esprit sillonniste de Cathe Descroix et la « laïcité ouverte » de la future Maison pour tous : C. Maurel, <em>60 ans des MJC</em> (thèse), p. 166–167.</li>
+    </ol>
+  </div>
+
+  <div class="colophon">Notice composée à partir d'archives familiales et de sources historiques publiques — usage privé et généalogique.<br>Photographies restaurées ; mise en page réalisée avec l'aide de l'IA Claude Sonnet 5, d'Anthropic.</div>
+
+</div>
+</body>
+</html>
