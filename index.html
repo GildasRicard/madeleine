@@ -16,6 +16,8 @@
     --accent:#7a2e2e;
     --margin-note:#7d7261;
     --paper-shadow:0 0 0 1px rgba(0,0,0,.03), 0 25px 50px -20px rgba(60,45,20,.25);
+    --aside-context-bg:#f5ede0;
+    --aside-grapho-bg:#f0eee8;
   }
   *{box-sizing:border-box;}
   html{background:#e7ded0;}
@@ -266,7 +268,7 @@
   figure.two-up > div{flex:1 1 260px; max-width:340px;}
   figcaption{
     margin-top:10px;
-    font-size:.85rem;
+    font-size:.95rem;
     font-style:italic;
     color:var(--margin-note);
     text-align:justify;
@@ -296,25 +298,56 @@
   .timeline .ev{font-size:.98rem;}
   .timeline .ev b{font-weight:600;}
 
-  /* ---------- Info box ---------- */
+  /* ---------- Info box — encadré contextuel ---------- */
   .aside{
-    background:rgba(122,46,46,.05);
-    border:1px solid rgba(122,46,46,.15);
-    padding:18px 22px;
-    margin:26px 0;
-    font-size:.94rem;
+    background:var(--aside-context-bg);
+    border-left:3px solid rgba(122,46,46,.35);
+    border-top:1px solid rgba(122,46,46,.12);
+    border-bottom:1px solid rgba(122,46,46,.12);
+    border-right:none;
+    padding:18px 24px 18px 22px;
+    margin:28px 0;
+    font-size:.97rem;
     color:var(--ink-soft);
   }
   .aside h4{
-    margin:0 0 8px;
-    font-variant:small-caps;
-    letter-spacing:.08em;
-    color:var(--accent);
+    margin:0 0 10px;
+    font-family:"Cormorant Garamond", serif;
+    font-style:italic;
     font-weight:600;
-    font-size:.92rem;
+    letter-spacing:.01em;
+    color:var(--accent);
+    font-size:1.05rem;
   }
-  .aside p{margin-bottom:8px;}
+  .aside p{margin-bottom:9px;}
   .aside p:last-child{margin-bottom:0;}
+
+  /* ---------- Info box — encadré graphologique ---------- */
+  .aside-grapho{
+    background:var(--aside-grapho-bg);
+    border-top:1.5px solid var(--rule);
+    border-bottom:1.5px solid var(--rule);
+    border-left:none;
+    border-right:none;
+    padding:20px 28px;
+    margin:28px 0;
+    font-size:.93rem;
+    color:var(--ink-soft);
+    font-style:italic;
+  }
+  .aside-grapho h4{
+    margin:0 0 12px;
+    font-family:"EB Garamond", serif;
+    font-variant:small-caps;
+    font-style:normal;
+    letter-spacing:.12em;
+    color:var(--margin-note);
+    font-weight:600;
+    font-size:.97rem;
+  }
+  .aside-grapho p{margin-bottom:8px; font-style:normal;}
+  .aside-grapho p:last-child{margin-bottom:0;}
+  .aside-grapho b{font-weight:600; color:var(--ink);}
 
   /* ---------- Footer / notes ---------- */
   .colophon{
@@ -328,12 +361,12 @@
   }
   .notes{
     margin-top:60px;
-    font-size:.86rem;
+    font-size:.96rem;
     color:var(--ink-soft);
   }
   .notes h2{font-size:1.15rem;}
   .notes ol{padding-left:20px;}
-  .notes li{margin-bottom:10px; text-align:justify;}
+  .notes li{margin-bottom:12px; text-align:justify;}
   .notes a{color:var(--accent);}
 
   .sources-list{
@@ -420,7 +453,10 @@
   <section id="sillon">
     <h2><span class="num">Première partie</span>Une jeunesse dans la mouvance du Sillon</h2>
     <p>Marie-Madeleine Ricard naît le 9 juin 1893, un an à peine avant la fondation du <em class="name">Sillon</em> par <em class="name">Marc Sangnier</em> (1873–1950) — ce mouvement de démocratie chrétienne dans les archives duquel son nom finira, bien plus tard, par apparaître.<sup class="note"><a href="#n1">1</a></sup> Le Sillon voulait concilier catholicisme et idéal républicain, offrir aux ouvriers et aux étudiants un lieu de rencontre et d'éducation populaire, et fut, en son temps, l'un des plus vastes foyers de laïcs catholiques engagés dans la question sociale.<sup class="note"><a href="#n2">2</a></sup> Sangnier lui-même, ancien élève de Polytechnique, y voyait moins une œuvre confessionnelle qu'un mouvement « profondément religieux » sans être inféodé à la hiérarchie — position qui, en 1910, lui vaudra la condamnation, par la lettre pontificale <em>Notre charge apostolique</em>, et la dissolution du mouvement.<sup class="note"><a href="#n3">3</a></sup></p>
-
+<figure>
+  <img src="assets/acte-naissance.jpg" alt="Extrait de l'acte de naissance de Marie-Madeleine Ricard, mairie de Saint-Valery-sur-Somme, 1893">
+  <figcaption>Extrait de l'acte de naissance de Marie-Madeleine Joseph Ricard, dressé par la mairie de Saint-Valery-sur-Somme.</figcaption>
+</figure>
     <figure class="two-up">
       <div>
         <img src="assets/enfance-seule.jpg" alt="Marie-Madeleine Ricard enfant, vers deux ans">
@@ -469,6 +505,12 @@
         Document de 1921 relatif à l'organisation de « Chez nous » au 76, rue Mouffetard — on y retrouve notamment Marie-Madeleine Ricard, chargée du Bar et Restaurant. Cliquer sur l'image pour accéder au document PDF complet.
       </figcaption>
     </figure>
+
+ <div class="aside">
+      <h4>Organiser « Chez nous » : argent, logement, quartier</h4>
+      <p>Le témoignage filmé d'une des pionnières de la maison — restée dans les mémoires sous son surnom scout de « Mère Louve » — éclaire les conditions matérielles très concrètes de ces débuts. Le 76, rue Mouffetard, ancienne Université populaire où Jaurès avait pris la parole, est loué 20 000 francs par an, en 1919, à un riche notaire parisien ; l'immeuble, alors insalubre et infesté de rats, sans eau ni sanitaires, compte cinq étages de locataires qu'il est impossible d'expulser sans les reloger ailleurs. Le cinéma, ouvert dès le 4 octobre 1919 dans une rue encore sans électricité, tourne grâce à un vieux moteur cédé par l'armée ; les séances du jeudi, à 25 centimes, financent en partie l'ensemble, mais « Dame Pauvreté », selon l'expression de l'équipe, ne lâche jamais la maison — les subventions demandées restent insuffisantes, et l'essentiel du financement repose sur des dons de particuliers ou de collectivités aisées. Parmi eux, Renée Sainte-Claire Deville, fille du général inventeur du canon de 75, s'impose comme collaboratrice essentielle : trésorière puis, en 1937, première présidente de la Maison pour tous. Sur le relogement des familles les plus démunies, la maison s'appuie, à partir de 1920–1921, sur les premiers programmes d'HLM (rue Brillat-Savarin, puis rue Larrey vers 1925, réservée aux familles d'au moins quatre enfants) et sur une section du « Logement ouvrier », association fondée avant-guerre par un prêtre du quatorzième arrondissement, qui aide les familles à épargner et à régler leur loyer par petites sommes hebdomadaires.</p>
+    </div>
+
   </section>
     <figure style="margin-top:30px;">
       <img src="assets/augustin_ricard_037.jpg"
@@ -484,9 +526,9 @@
     <p>Entrer à Jouarre en 1926, c'est entrer dans une communauté de <em>vie entièrement contemplative</em>, au sens que lui donnait alors le droit canonique de 1917 : une existence cloîtrée, rythmée par l'office divin et le travail, selon la maxime bénédictine <em>ora et labora</em>, et soumise à la <b>clôture papale</b> — cette discipline qui interdit, sauf exception, toute sortie du monastère et toute entrée de personnes étrangères dans l'enceinte réservée aux moniales.<sup class="note"><a href="#n11">11</a></sup> C'est cette forme de vie, retirée du monde et pourtant tournée vers lui par la prière, que Marie-Madeleine Ricard choisit à trente-trois ans, après une décennie d'engagement actif au service des plus pauvres du quartier Mouffetard. Elle y prend le nom de <b>sœur Marguerite-Marie</b> et prononce ses vœux le 24 mai 1928.<sup class="note"><a href="#n8">8</a></sup></p>
 
     <figure>
-      <img src="assets/religieuse-jeune.jpg" alt="Sœur Marguerite-Marie, jeune religieuse, dans le cloître de l'abbaye de Jouarre">
-      <figcaption>Sœur Marguerite-Marie, jeune religieuse.</figcaption>
-    </figure>
+  <img src="assets/religieuse-jeune.jpg" alt="Sœur Marguerite-Marie, jeune religieuse, dans le cloître de l'abbaye de Jouarre">
+  <figcaption>Sœur Marguerite-Marie, jeune religieuse. Le voile blanc, traditionnellement celui des novices, laisse penser que la photo précède sa profession du 24 mai 1928.</figcaption>
+</figure>
   </section>
 
   <section id="office">
@@ -542,7 +584,7 @@
       <figcaption>1. Lettre à Pierre, pour sa communion solennelle, vers 1932.</figcaption>
     </figure>
 
-    <div class="aside">
+    <div class="aside-grapho">
       <h4>Lecture graphologique n° 1 — vers 1932</h4>
       <p>L'écriture est de calibre régulier, posée et constamment inclinée à droite de façon modérée. Elle progresse par petits groupes de lettres — liées en guirlandes légères à l'intérieur de chaque groupe — avec des levers de plume fréquents et délibérés entre eux. Ce rythme groupé, ni très lié ni franchement juxtaposé, évoque une pensée qui avance par séquences : analytique sans être saccadée.</p>
       <p>Les marges révèlent une tension caractéristique : légère marge à gauche, absence totale à droite, parfois quelques mots tassés en fin de ligne — le besoin de tout dire l'emporte sur le souci de l'espace, mais sans jamais déborder sur les lignes voisines, qui restent parfaitement distinctes.</p>
@@ -559,9 +601,9 @@
       <figcaption>2. Première page d'un carnet de notes, vers 1960.</figcaption>
     </figure>
 
-    <div class="aside">
+    <div class="aside-grapho">
       <h4>Lecture graphologique n° 2 — vers 1960</h4>
-      <p class="lead" style="font-size:.86rem; margin-bottom:14px;">Cette analyse ne porte que sur les trois premiers feuillets du carnet.</p>
+      <p class="lead" style="font-size:.92rem; margin-bottom:14px;">Cette analyse ne porte que sur les trois premiers feuillets du carnet.</p>
       <p><b>Première feuille (fiche unique).</b> L'écriture est petite, serrée, sans marges, structurée en paragraphes avec retraits réguliers : ce n'est pas une mise en page pour autrui mais une organisation pour soi, une pensée qui se donne sa propre architecture intérieure. Les abréviations fréquentes (Ch pour Christ, ns pour nous, q pour que) confirment que l'outil graphique suit une pensée plus rapide qu'elle — on note, on ne rédige pas.</p>
       <p>Le trait est épais (stylo-bille), les formes assez anguleuses, les finales courtes, les initiales directes : l'économie du geste observée trente ans plus tôt s'est accentuée, toute dépense inutile a disparu. Les barres de t lancées subsistent — l'élan volontaire est intact. L'absence totale de fioritures, chez quelqu'un qui écrit manifestement beaucoup et depuis longtemps, est éloquente : aucune complaisance envers soi-même.</p>
       <p>La tenue de ligne est la variable la plus informative : majoritairement horizontale ou légèrement concave, elle marque une maîtrise réelle, mais avec des passages montants qui trahissent des moments d'élan ou d'intensité dans la réflexion — la ligne suit l'état intérieur plus qu'elle ne le gouverne.</p>
@@ -579,7 +621,7 @@
       <figcaption>3. Lettre à Pierre et Marie, 1971, au lendemain du décès du frère de sœur Marguerite-Marie.</figcaption>
     </figure>
 
-    <div class="aside">
+    <div class="aside-grapho">
       <h4>Lecture graphologique n° 3 — 1971</h4>
       <p>En 1971, à 78 ans, l'écriture ne trahit aucune fatigue : les traits fondamentaux — petitesse, régularité, inclinaison constante, formes fermées sur les o et a, m ouverts, jambages longs, barres de t lancées, lettres groupées — sont intacts et immédiatement reconnaissables. Deux légères évolutions méritent attention : la marge gauche se réduit progressivement au fil de la page, comme si l'élan du début se tempérait en s'intériorisant, tandis que la marge droite, désormais tenue mais sans rigidité, marque une retenue nouvelle — l'urgence de tout occuper s'est apaisée. Ce qui ressort au fond, c'est moins l'absence de vieillissement que la remarquable cohérence d'une écriture qui, sur quarante ans, n'a jamais été une performance mais une manière d'être.</p>
     </div>
