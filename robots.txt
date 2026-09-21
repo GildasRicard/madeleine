@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gildasricard.github.io/madeleine/sitemap.xml
