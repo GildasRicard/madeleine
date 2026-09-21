@@ -417,6 +417,44 @@
     .page{box-shadow:none; padding:0;}
     .page::before{display:none;}
   }
+
+  /* ---------- Signe « ✠ Pax » (décor) ---------- */
+  /* Réglages rapides : tailles et opacités ci-dessous */
+  :root{
+    --pax-ornement-w:170px;      /* « ✠ Pax » d'ouverture (sous les dates) */
+    --pax-sep-h:34px;            /* croix entre les parties */
+    --pax-sep-opacity:.8;
+    --pax-signature-w:150px;     /* « ✠ Pax » en fin de notice */
+    --pax-filigrane-size:260px;  /* croix en filigrane derrière le titre */
+    --pax-filigrane-opacity:.05;
+  }
+  .ornament{margin:22px 0 16px;}
+  .ornament img.pax-croix{width:var(--pax-ornement-w);height:auto;vertical-align:middle;}
+  .pax-sep{text-align:center;margin:64px 0 0;}
+  .pax-sep img{height:var(--pax-sep-h);width:auto;opacity:var(--pax-sep-opacity);}
+  .pax-sep + section{margin-top:26px;}
+  .pax-signature{text-align:center;margin:64px 0 0;}
+  .pax-signature span{position:relative;display:inline-block;}
+  .pax-signature img{width:var(--pax-signature-w);height:auto;}
+  .pax-signature sup.note{position:absolute;left:100%;top:6px;margin-left:4px;}
+  .pax-signature + .colophon{margin-top:26px;}
+  h1.title{position:relative;z-index:0;}
+  h1.title::before{
+    content:"";
+    position:absolute;
+    left:50%; top:50%;
+    width:var(--pax-filigrane-size);
+    height:var(--pax-filigrane-size);
+    transform:translate(-50%,-50%);
+    background:url("assets/croix.png") center/contain no-repeat;
+    opacity:var(--pax-filigrane-opacity);
+    z-index:-1;
+    pointer-events:none;
+  }
+  @media (max-width:600px){
+    :root{--pax-ornement-w:135px;--pax-sep-h:28px;--pax-signature-w:120px;--pax-filigrane-size:220px;}
+    .pax-sep{margin-top:48px;}
+  }
 </style>
 <link rel="canonical" href="https://gildasricard.github.io/madeleine/">
 <link rel="icon" href="favicon.png" type="image/png" sizes="192x192">
@@ -470,7 +508,7 @@
     <small><span class="subname">née Marie-Madeleine Ricard</span>, <br> <span class="submonial">moniale bénédictine de l'abbaye Notre-Dame de Jouarre</span></small>
   </h1>
   <p class="dates">9 juin 1893 — 1<sup>er</sup> décembre 1985</p>
-  <div class="ornament">✦ ✦ ✦</div>
+  <div class="ornament"><img class="pax-croix" src="assets/pax.png" alt="✠ Pax" width="865" height="313"></div>
   <p class="subtitle-block">Du Sillon de Marc Sangnier et de la Mouffe de la rue Mouffetard à Paris, à la clôture de l'abbaye de Jouarre : itinéraire d'une vie donnée.</p>
 
   <figure class="frontispiece">
@@ -530,6 +568,8 @@
     </figure>
   </section>
 
+  <div class="pax-sep" aria-hidden="true"><img src="assets/croix.png" alt="" width="256" height="251" loading="lazy"></div>
+
   <section id="mouffe">
     <h2><span class="num">Deuxième partie</span>« Chez nous » : la Maison pour tous de la Mouffe</h2>
     <p>Le terreau de cet engagement porte un nom familier à qui s'intéresse à l'éducation populaire parisienne : <em class="name">la Mouffe</em>, du nom de la rue Mouffetard, dans le cinquième arrondissement. Tout commence en 1906, lorsqu'une jeune étudiante « sillonniste », Cathe Descroix, s'installe au 6 de la rue avec deux amies et fonde un petit groupe baptisé <em>« Chez nous »</em>, dans un quartier où les conditions de vie sont alors particulièrement difficiles. Rattaché au Sillon, le groupe organise colonies de vacances, conférences, une bibliothèque, des sorties appelées « caravanes », puis, en 1920, installe son foyer au 76, rue Mouffetard — un local qui avait accueilli, avant la Première Guerre, une Maison des syndicats et une Université populaire où étaient venus parler Jean Jaurès et Léon Bloy, où Lénine lui-même aurait pris la parole.<sup class="note"><a href="#n5">5</a></sup></p>
@@ -575,6 +615,8 @@
         Dos d'une carte postale adressée à Marie-Madeleine Ricard, 73 rue de Buffon, Paris V<sup>e</sup> — document non daté, expédié depuis le Château de la Roche-Guerneuc, par Caulnes, Côtes-du-Nord, par sa belle-sœur, femme de son frère, Augustin. On y lit l'adresse parisienne où elle résidait alors.
       </figcaption>
     </figure>
+  <div class="pax-sep" aria-hidden="true"><img src="assets/croix.png" alt="" width="256" height="251" loading="lazy"></div>
+
   <section id="jouarre">
     <h2><span class="num">Troisième partie</span>L'entrée en religion : l'abbaye Notre-Dame de Jouarre</h2>
     <p>En 1926, Marie-Madeleine Ricard quitte la Mouffe et entre à l'abbaye Notre-Dame de Jouarre, en Seine-et-Marne — l'un des plus anciens monastères de France, fondé vers 630 par saint Ado (Adon), fils de saint Authaire, à l'instigation de saint Colomban. L'abbaye fut d'abord un monastère double, avant que sa branche féminine, placée sous l'autorité de la première abbesse, sainte Théodechilde, ne devienne seule pérenne ; au IX<sup>e</sup> siècle, sous l'impulsion de la réforme carolingienne, la communauté adopte la règle de saint Benoît.<sup class="note"><a href="#n9">9</a></sup> Ruinée pendant la guerre de Cent Ans, dispersée puis vendue comme bien national à la Révolution, l'abbaye fut rachetée et repeuplée par des moniales bénédictines qui l'occupent sans discontinuer depuis lors.<sup class="note"><a href="#n10">10</a></sup></p>
@@ -586,6 +628,8 @@
   <figcaption>Sœur Marguerite-Marie, jeune religieuse. Le voile blanc, traditionnellement celui des novices, laisse penser que la photo précède sa profession du 24 mai 1928.</figcaption>
 </figure>
   </section>
+
+  <div class="pax-sep" aria-hidden="true"><img src="assets/croix.png" alt="" width="256" height="251" loading="lazy"></div>
 
   <section id="office">
     <h2><span class="num">Quatrième partie</span>Cellérière et prieure</h2>
@@ -602,6 +646,8 @@
       <cite>Avis de décès, communauté de l'abbaye Notre-Dame de Jouarre, décembre 1985</cite>
     </blockquote>
   </section>
+
+  <div class="pax-sep" aria-hidden="true"><img src="assets/croix.png" alt="" width="256" height="251" loading="lazy"></div>
 
   <section id="derniers">
     <h2><span class="num">Cinquième partie</span>Les dernières années et la mort</h2>
@@ -626,7 +672,7 @@
     </div>
   </section>
 
-  <hr class="rule">
+  <div class="pax-sep" aria-hidden="true"><img src="assets/croix.png" alt="" width="256" height="251" loading="lazy"></div>
 
   <section id="ecriture">
     <h2><span class="num">Sixième partie</span>Le témoignage de l'écriture</h2>
@@ -689,7 +735,7 @@
         Page d'une lettre de sœur Marguerite-Marie à son frère Augustin, datée du 4 mars 1970 (Place nette, 4-3-70). Les soulignements et les deux dernières lignes — note de réception et de classement — sont de la main de son frère.
       </figcaption>
     </figure>
-  <hr class="rule">
+  <div class="pax-sep" aria-hidden="true"><img src="assets/croix.png" alt="" width="256" height="251" loading="lazy"></div>
 
   <section id="sources">
     <h2><span class="num">Septième partie</span>Sources et documents</h2>
@@ -721,8 +767,12 @@
       <li id="n12">Albert Peyriguère (1883–1959), ancien aumônier militaire, rejoint l'esprit de Charles de Foucauld et vit en ermite à El Kbab (Maroc) au service d'une population musulmane, jusqu'à sa mort en 1959. Voir « Albert Peyriguère », <em>Wikipédia</em>.</li>
       <li id="n13">Sur la rupture de 1921–1923 entre l'esprit sillonniste de Cathe Descroix et la « laïcité ouverte » de la future Maison pour tous : C. Maurel, <em>60 ans des MJC</em> (thèse), p. 166–167.</li>
  
+	
+      <li id="n14">Le signe « ✠ Pax » reproduit ici (croix suivie du mot <em>Pax</em>) est tiré d'un courrier de 1931. Sœur Marguerite-Marie l'a placé en tête de toutes ses lettres, selon une pratique inspirée de la tradition bénédictine : PAX (« paix ») est la devise de l'ordre de saint Benoît, que l'on retrouve au frontispice de nombreux monastères et sur la médaille de saint Benoît, où elle a remplacé le monogramme IHS à l'occasion de la médaille du jubilé de 1880, dessinée à l'abbaye de Beuron. Elle rappelle le salut du Christ ressuscité à ses apôtres, « Pax vobis » (Jean 20, 19), tandis que la croix qui la précède place la lettre sous le signe du Christ. Voir « La médaille de saint Benoît » (osb.org) ; « La Médaille », abbaye Saint-Benoît de Port-Valais ; Traditions monastiques, « La médaille ou croix de saint Benoît : les questions les plus fréquentes ».</li>
 	</ol>
   </div>
+
+  <div class="pax-signature"><span><img src="assets/pax.png" alt="✠ Pax" width="865" height="313" loading="lazy"><sup class="note"><a href="#n14">14</a></sup></span></div>
 
   <div class="colophon">Gildas R. Notice composée à partir d'archives familiales et de sources historiques publiques — usage privé et généalogique.<br>Photographies restaurées ; mise en page réalisée avec l'aide de l'IA Claude Sonnet 5, d'Anthropic.</div>
 
